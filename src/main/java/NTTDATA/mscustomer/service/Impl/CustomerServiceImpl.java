@@ -1,8 +1,8 @@
-package NTTDATA.mscustomer_bank.service.Impl;
+package NTTDATA.mscustomer.service.Impl;
 
-import NTTDATA.mscustomer_bank.model.Customer;
-import NTTDATA.mscustomer_bank.repository.CustomerRepository;
-import NTTDATA.mscustomer_bank.service.CustomerService;
+import NTTDATA.mscustomer.model.Customer;
+import NTTDATA.mscustomer.repository.CustomerRepository;
+import NTTDATA.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

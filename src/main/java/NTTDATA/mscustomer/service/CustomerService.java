@@ -1,6 +1,6 @@
-package NTTDATA.mscustomer_bank.service;
+package NTTDATA.mscustomer.service;
 
-import NTTDATA.mscustomer_bank.model.Customer;
+import NTTDATA.mscustomer.model.Customer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

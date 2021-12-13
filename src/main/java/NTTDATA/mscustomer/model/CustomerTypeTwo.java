@@ -1,4 +1,4 @@
-package NTTDATA.mscustomer_bank.model;
+package NTTDATA.mscustomer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

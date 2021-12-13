@@ -1,10 +1,10 @@
-package NTTDATA.mscustomer_bank;
+package NTTDATA.mscustomer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MscustomerBankApplicationTests {
+class MscustomerApplicationTests {
 
 	@Test
 	void contextLoads() {

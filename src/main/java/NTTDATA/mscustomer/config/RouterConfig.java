@@ -1,6 +1,6 @@
-package NTTDATA.mscustomer_bank.config;
+package NTTDATA.mscustomer.config;
 
-import NTTDATA.mscustomer_bank.handler.CustomerHandler;
+import NTTDATA.mscustomer.handler.CustomerHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;

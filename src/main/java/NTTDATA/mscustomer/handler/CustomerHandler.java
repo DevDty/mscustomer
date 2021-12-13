@@ -1,7 +1,7 @@
-package NTTDATA.mscustomer_bank.handler;
+package NTTDATA.mscustomer.handler;
 
-import NTTDATA.mscustomer_bank.model.Customer;
-import NTTDATA.mscustomer_bank.service.CustomerService;
+import NTTDATA.mscustomer.model.Customer;
+import NTTDATA.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
