@@ -68,7 +68,7 @@ public class CustomerHandler {
     public Mono<ServerResponse> delete (ServerRequest request){
         String id = request.pathVariable("id");
         Mono<Customer> customerMonoDb = service.findById(id);
-        return customerMonoDb.flatMap(p -> service.delete(id).then(ServerResponse.noContent().build()))
+        return customerMonoDb.flatMap(p -> service.delete(p).then(ServerResponse.noContent().build()))
                 .switchIfEmpty(ServerResponse.notFound().build());
     }
 

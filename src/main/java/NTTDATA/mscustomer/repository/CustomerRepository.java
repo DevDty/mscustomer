@@ -9,5 +9,5 @@ public interface CustomerRepository extends ReactiveMongoRepository<Customer, St
     Mono<Customer> save(Customer customer);
     Mono<Customer> findById(String id);
     Flux<Customer> findAll();
-    Mono<Customer> delete(String id);
+    Mono<Void> delete(Customer customer);
 }

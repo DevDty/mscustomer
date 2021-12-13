@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
 
-@Document("customerType")
+@Document("customerTypeTwo")
 @Builder
 @Data
 @NoArgsConstructor

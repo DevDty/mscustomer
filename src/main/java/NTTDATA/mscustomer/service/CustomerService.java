@@ -8,5 +8,5 @@ public interface CustomerService {
     public Mono<Customer> save(Customer customer);
     public Mono<Customer> findById(String id);
     public Flux<Customer> findAll();
-    public Mono<Customer> delete(String id);
+    public Mono<Void> delete(Customer customer);
 }

@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerRepository repository;
+    private  final CustomerRepository repository;
 
     @Override
     public Mono<Customer> save(Customer customer) {
@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Mono<Customer> delete(String id) {
-        return repository.delete(id);
+    public Mono<Void> delete(Customer customer) {
+        return repository.delete(customer);
     }
 }
