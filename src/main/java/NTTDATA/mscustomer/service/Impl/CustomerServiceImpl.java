@@ -1,6 +1,8 @@
 package NTTDATA.mscustomer.service.Impl;
 
 import NTTDATA.mscustomer.model.Customer;
+import NTTDATA.mscustomer.model.CustomerType;
+import NTTDATA.mscustomer.model.CustomerTypeTwo;
 import NTTDATA.mscustomer.repository.CustomerRepository;
 import NTTDATA.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
@@ -33,4 +35,5 @@ public class CustomerServiceImpl implements CustomerService {
     public Mono<Void> delete(Customer customer) {
         return repository.delete(customer);
     }
+
 }

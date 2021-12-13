@@ -12,6 +12,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Configuration
 public class RouterConfig {
+
     @Bean
     public RouterFunction<ServerResponse> routes(CustomerHandler handler){
         return route(GET("/customer/{id}"), handler::findById)
@@ -19,7 +20,6 @@ public class RouterConfig {
                 .andRoute(GET("/customer"), handler::findAll)
                 .andRoute(PUT("/customer/{id}"), handler::update)
                 .andRoute(DELETE("/customer/{id}"), handler::delete);
+
     }
-
-
 }

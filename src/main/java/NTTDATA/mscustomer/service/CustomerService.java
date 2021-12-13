@@ -1,6 +1,8 @@
 package NTTDATA.mscustomer.service;
 
 import NTTDATA.mscustomer.model.Customer;
+import NTTDATA.mscustomer.model.CustomerType;
+import NTTDATA.mscustomer.model.CustomerTypeTwo;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,6 +1,8 @@
 package NTTDATA.mscustomer.handler;
 
 import NTTDATA.mscustomer.model.Customer;
+import NTTDATA.mscustomer.model.CustomerType;
+import NTTDATA.mscustomer.model.CustomerTypeTwo;
 import NTTDATA.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
