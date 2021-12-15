@@ -22,7 +22,7 @@ public class CustomerHandler {
 
 
 
-    public Mono<ServerResponse> create (ServerRequest request){
+    public Mono<ServerResponse> create(ServerRequest request){
         Mono<Customer> customerMono = request.bodyToMono(Customer.class);
         return customerMono
                 .flatMap(service::save)
@@ -32,7 +32,7 @@ public class CustomerHandler {
                 );
     }
 
-    public Mono<ServerResponse> findById (ServerRequest request){
+    public Mono<ServerResponse> findById(ServerRequest request){
         String id = request.pathVariable("id");
         return service.findById(id)
                 .flatMap(r -> ServerResponse.ok()
@@ -42,13 +42,23 @@ public class CustomerHandler {
                 .switchIfEmpty(ServerResponse.notFound().build());
     }
 
-    public Mono<ServerResponse> findAll (ServerRequest request){
+    public Mono<ServerResponse> findByDni(ServerRequest request){
+        String dni = request.pathVariable("dni");
+        return service.findByDni(dni)
+                .flatMap(r -> ServerResponse.ok()
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(r)
+                )
+                .switchIfEmpty(ServerResponse.notFound().build());
+    }
+
+    public Mono<ServerResponse> findAll(ServerRequest request){
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(service.findAll(), Customer.class);
     }
 
-    public Mono<ServerResponse> update (ServerRequest request){
+    public Mono<ServerResponse> update(ServerRequest request){
         Mono<Customer> customerMono = request.bodyToMono(Customer.class);
         String id = request.pathVariable("id");
         Mono<Customer> customerMonoDb = service.findById(id);
@@ -67,7 +77,7 @@ public class CustomerHandler {
         .switchIfEmpty(ServerResponse.notFound().build());
     }
 
-    public Mono<ServerResponse> delete (ServerRequest request){
+    public Mono<ServerResponse> delete(ServerRequest request){
         String id = request.pathVariable("id");
         Mono<Customer> customerMonoDb = service.findById(id);
         return customerMonoDb.flatMap(p -> service.delete(p).then(ServerResponse.noContent().build()))

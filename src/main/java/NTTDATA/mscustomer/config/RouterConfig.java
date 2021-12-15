@@ -19,7 +19,7 @@ public class RouterConfig {
                 .andRoute(POST("/customer"), handler::create)
                 .andRoute(GET("/customer"), handler::findAll)
                 .andRoute(PUT("/customer/{id}"), handler::update)
-                .andRoute(DELETE("/customer/{id}"), handler::delete);
-
+                .andRoute(DELETE("/customer/{id}"), handler::delete)
+                .andRoute(GET("/customer/dni/{dni}"), handler::findByDni);
     }
 }

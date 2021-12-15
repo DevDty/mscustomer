@@ -27,6 +27,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Mono<Customer> findByDni(String dni) {
+        return repository.findByDni(dni);
+    }
+
+    @Override
     public Flux<Customer> findAll() {
         return repository.findAll();
     }
