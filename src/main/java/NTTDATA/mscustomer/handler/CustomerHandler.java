@@ -20,8 +20,6 @@ public class CustomerHandler {
 
     private final CustomerService service;
 
-
-
     public Mono<ServerResponse> create(ServerRequest request){
         Mono<Customer> customerMono = request.bodyToMono(Customer.class);
         return customerMono
