@@ -5,6 +5,7 @@ import NTTDATA.mscustomer.model.CustomerType;
 import NTTDATA.mscustomer.model.CustomerTypeTwo;
 import NTTDATA.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
+import java.util.concurrent.TimeUnit;
 
 @Component
 @RequiredArgsConstructor
@@ -80,6 +82,17 @@ public class CustomerHandler {
         Mono<Customer> customerMonoDb = service.findById(id);
         return customerMonoDb.flatMap(p -> service.delete(p).then(ServerResponse.noContent().build()))
                 .switchIfEmpty(ServerResponse.notFound().build());
+    }
+
+    @SneakyThrows
+    public Mono<ServerResponse> findByIdCb(ServerRequest request){
+        String id = request.pathVariable("id");
+        TimeUnit.SECONDS.sleep(3L);
+        return service.findById(id)
+                .flatMap(c -> ServerResponse.ok()
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(c)
+                ).switchIfEmpty(ServerResponse.notFound().build());
     }
 
 }
